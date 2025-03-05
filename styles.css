@@ -1,0 +1,48 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Забезпечуємо, щоб body займало весь екран */
+}
+
+main {
+    flex: 1; /* Головний вміст займає весь доступний простір */
+}
+
+header img {
+    height: 50px; /* Розмір логотипу */
+    transition: transform 0.2s; /* Плавна анімація */
+}
+
+header img:hover {
+    transform: scale(1.1); /* Збільшення логотипу при наведенні */
+}
+
+footer {
+    background-color: #343a40;
+    color: white;
+    padding: 15px 0;
+    text-align: center;
+    margin-top: auto; /* Футер завжди внизу */
+}
+
+header h1 {
+    font-size: 2.5rem; /* Великий розмір тексту */
+    font-weight: bold; /* Жирний шрифт */
+    color: white; /* Білий колір тексту */
+    margin-bottom: 10px; /* Відступ знизу */
+}
+
+header nav {
+    margin-top: 10px; /* Відступ зверху для навігації */
+}
+
+header nav a {
+    margin: 0 10px; /* Відступи між кнопками */
+    font-weight: bold; /* Жирний шрифт для кнопок */
+    color: white !important; /* Білий колір тексту кнопок */
+    text-decoration: none; /* Видаляє підкреслення */
+}
+
+header nav a:hover {
+    color: #ffc107 !important; /* Жовтий колір при наведенні */
+}
