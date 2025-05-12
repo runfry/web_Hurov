@@ -1,48 +1,232 @@
+/* Основні стилі */
 body {
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* Забезпечуємо, щоб body займало весь екран */
+    min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8f9fa;
 }
 
 main {
-    flex: 1; /* Головний вміст займає весь доступний простір */
+    flex: 1;
+    padding: 20px 0;
 }
 
-header img {
-    height: 50px; /* Розмір логотипу */
-    transition: transform 0.2s; /* Плавна анімація */
-}
-
-header img:hover {
-    transform: scale(1.1); /* Збільшення логотипу при наведенні */
-}
-
-footer {
+/* Шапка */
+header {
     background-color: #343a40;
     color: white;
     padding: 15px 0;
-    text-align: center;
-    margin-top: auto; /* Футер завжди внизу */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+header .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header .logo-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+header img {
+    height: 50px;
+    transition: transform 0.2s;
+}
+
+header img:hover {
+    transform: scale(1.1);
 }
 
 header h1 {
-    font-size: 2.5rem; /* Великий розмір тексту */
-    font-weight: bold; /* Жирний шрифт */
-    color: white; /* Білий колір тексту */
-    margin-bottom: 10px; /* Відступ знизу */
+    font-size: 2.2rem;
+    font-weight: bold;
+    margin: 0;
+    color: white;
 }
 
-header nav {
-    margin-top: 10px; /* Відступ зверху для навігації */
+/* Навігація */
+nav {
+    margin-top: 15px;
 }
 
-header nav a {
-    margin: 0 10px; /* Відступи між кнопками */
-    font-weight: bold; /* Жирний шрифт для кнопок */
-    color: white !important; /* Білий колір тексту кнопок */
-    text-decoration: none; /* Видаляє підкреслення */
+nav a {
+    margin: 0 8px;
+    font-weight: bold;
+    color: white !important;
+    text-decoration: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    transition: all 0.3s;
 }
 
-header nav a:hover {
-    color: #ffc107 !important; /* Жовтий колір при наведенні */
+nav a:hover {
+    background-color: rgba(255,255,255,0.1);
+    transform: translateY(-2px);
+}
+
+nav a.btn-primary {
+    background-color: #007bff;
+}
+
+nav a.btn-success {
+    background-color: #28a745;
+}
+
+nav a.btn-secondary {
+    background-color: #6c757d;
+}
+
+nav a.btn-info {
+    background-color: #17a2b8;
+}
+
+nav a.btn-warning {
+    background-color: #ffc107;
+    color: #212529 !important;
+}
+
+/* Картки */
+.card {
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    transition: all 0.3s;
+    margin-bottom: 20px;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.card-title {
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+/* Форми */
+.form-control {
+    border-radius: 4px;
+    padding: 10px 15px;
+    border: 1px solid #ced4da;
+    transition: border-color 0.3s;
+}
+
+.form-control:focus {
+    border-color: #80bdff;
+    box-shadow: 0 0 0 0.2rem rgba(0,123,255,0.25);
+}
+
+.form-label {
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+.btn {
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-weight: 500;
+    transition: all 0.3s;
+    border: none;
+}
+
+.btn-primary {
+    background-color: #007bff;
+}
+
+.btn-primary:hover {
+    background-color: #0069d9;
+    transform: translateY(-2px);
+}
+
+/* Помилки */
+.error-message {
+    color: #dc3545;
+    font-size: 0.875rem;
+    margin-top: 5px;
+}
+
+/* Таблиці */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table th, .table td {
+    padding: 12px 15px;
+    border: 1px solid #dee2e6;
+}
+
+.table th {
+    background-color: #f8f9fa;
+    font-weight: 600;
+}
+
+/* Футер */
+footer {
+    background-color: #343a40;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    margin-top: auto;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Адаптація */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.8rem;
+    }
+    
+    nav a {
+        margin: 5px;
+        display: inline-block;
+    }
+    
+    .card {
+        margin-bottom: 15px;
+    }
+}
+
+/* Додаткові стилі */
+.input-group-text {
+    cursor: pointer;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.post-content {
+    white-space: pre-line;
+    line-height: 1.8;
+}
+
+.comment-date {
+    font-size: 0.8rem;
+    color: #6c757d;
+}
+
+/* Анімації */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.card, form {
+    animation: fadeIn 0.5s ease-out;
 }
